@@ -16,6 +16,7 @@ namespace Inheritance
                 menuOption = GetNumber("1 - Exit\n2 - Create Checking\n3 - Create Savings");
                 switch (menuOption)
                 {
+                    //  exit the ATM
                     case 1:
                         break;
 
