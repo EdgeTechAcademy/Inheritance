@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -22,6 +22,11 @@ namespace Inheritance
             this.type = type;
             this.timestamp = DateTime.Now;
             this.successful = success;
+        }
+
+        public override string ToString()
+        {
+            return String.Format("Transaction: {0}\n\tAmount: {1,10:C} Successful?: {2}", Type, Amount, Successful);
         }
     }
 }
