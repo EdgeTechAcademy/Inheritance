@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
 
 namespace Inheritance
 {
@@ -6,18 +7,53 @@ namespace Inheritance
     {
         static void Main(string[] args)
         {
-            Account account = new Account("Just an Account", 1000, 0.02f);
-            account.Deposit(100);
-            account.Deposit(200);
-            account.Withdrawal(400);
-            account.Deposit(300);
-            account.Withdrawal(1100);
-            account.Withdrawal(100);
-            account.ShowTransactions();
-            //Checking checking = new Checking("Family Account", 1000);
-            //Savings savings = new Savings("Savings Account", 1000);
-            //checking.OverdraftProtecion = savings;
+            int balance;
+            string accountName;
+            int menuOption = 0;
+
+            while (menuOption != 1)
+            {
+                menuOption = GetNumber("1 - Exit\n2 - Create Checking\n3 - Create Savings");
+                switch (menuOption)
+                {
+                    case 1:
+                        break;
+
+                    case 2:
+                        accountName = GetInput("Account Name");
+                        balance = GetNumber("Initial Amt: ");
+                        Checking checking = new Checking(accountName, balance, 0.02f);
+                        break;
+
+                    case 3:
+                        accountName = GetInput("Account Name");
+                        balance = GetNumber("Initial Amt: ");
+                        Savings savings = new Savings(accountName, balance, 0.02f);
+                        break;
+
+                    default:
+                        break;
+                }
+            }
             Console.ReadLine();
+        }
+
+        public static string GetInput(string prompt)
+        {
+            Console.Write(prompt);
+            string str = Console.ReadLine();
+            return str;
+        }
+        public static int GetNumber(string prompt)
+        {
+            int userNumber;
+            string strNumber = GetInput(prompt);
+            while (!Int32.TryParse(strNumber, out userNumber))
+            {
+                Console.WriteLine("That is not an integer");
+                strNumber = GetInput(prompt);
+            }
+            return userNumber;
         }
     }
 }
