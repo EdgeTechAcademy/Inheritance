@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace Inheritance
@@ -20,13 +20,13 @@ namespace Inheritance
                         break;
 
                     case 2:
-                        accountName = GetInput("Checking Account Name");
+                        accountName = GetInput("Account Name");
                         balance = GetNumber("Initial Amt: ");
                         Checking checking = new Checking(accountName, balance, 0.02f);
                         break;
 
                     case 3:
-                        accountName = GetInput("Savings Account Name");
+                        accountName = GetInput("Account Name");
                         balance = GetNumber("Initial Amt: ");
                         Savings savings = new Savings(accountName, balance, 0.02f);
                         break;
