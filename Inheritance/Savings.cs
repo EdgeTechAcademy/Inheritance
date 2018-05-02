@@ -8,6 +8,8 @@ namespace Inheritance
     {
         public Savings(string accountName, decimal balance, float interestRate) : base(accountName, balance, interestRate)
         {
+            //      gift of a $100 for opening an new account
+            this.Deposit(100);
         }
     }
 }

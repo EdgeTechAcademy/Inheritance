@@ -23,5 +23,10 @@ namespace Inheritance
             this.timestamp = DateTime.Now;
             this.successful = success;
         }
+
+        public override string ToString()
+        {
+            return String.Format("Transaction: {0}\n\tAmount: {1,10:C} Successful?: {2}", Type, Amount, Successful);
+        }
     }
 }

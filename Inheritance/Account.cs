@@ -58,8 +58,13 @@ namespace Inheritance
         {
             foreach (Transaction trans in transactions)
             {
-                Console.WriteLine("Transaction: {0}\n\tAmount: {1} Successful?: {2}", trans.Type, trans.Amount, trans.Successful );
+                Console.WriteLine(trans);
             }
+        }
+
+        public override string ToString()
+        {
+            return accountName + " : Balance = " + balance;
         }
     }
 }
