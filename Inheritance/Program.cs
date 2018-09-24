@@ -10,6 +10,8 @@ namespace Inheritance
             int balance;
             string accountName;
             int menuOption = 0;
+            Checking checking = null;
+            Savings savings = null;
 
             while (menuOption != 1)
             {
@@ -23,28 +25,28 @@ namespace Inheritance
                     case 2:
                         accountName = GetInput("Account Name");
                         balance = GetNumber("Initial Amt: ");
-                        Checking checking = new Checking(accountName, balance, 0.02f);
+                        checking = new Checking(accountName, balance, 0.02f);
                         break;
 
                     case 3:
                         accountName = GetInput("Account Name");
                         balance = GetNumber("Initial Amt: ");
-                        Savings savings = new Savings(accountName, balance, 0.02f);
+                        savings = new Savings(accountName, balance, 0.02f);
                         break;
 
                     default:
                         break;
                 }
             }
-            Console.ReadLine();
-        }
+        }   // end of the Main method. Everything comes after here
 
         public static string GetInput(string prompt)
         {
             Console.Write(prompt);
             string str = Console.ReadLine();
             return str;
-        }
+        }   // end of the GetInput method
+        
         public static int GetNumber(string prompt)
         {
             int userNumber;
@@ -55,6 +57,6 @@ namespace Inheritance
                 strNumber = GetInput(prompt);
             }
             return userNumber;
-        }
+        }   // end of the GetNumber method
     }
 }
