@@ -15,7 +15,9 @@ namespace Inheritance
 
             while (menuOption != 1)
             {
-                menuOption = GetNumber("1 - Exit\n2 - Create Checking\n3 - Create Savings");
+                menuOption = GetNumber("1 - Exit\n"+
+                                       "2 - Create Checking\t3 - Create Savings" + 
+                                       "4 - something else \t5 - another option");
                 switch (menuOption)
                 {
                     //  exit the ATM
